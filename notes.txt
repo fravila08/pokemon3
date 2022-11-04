@@ -1,0 +1,37 @@
+#creates an environement
+python3 -m venv env
+
+#activate environement
+source env/bin/activate
+
+#install django
+pip install django
+
+#start a django project
+django-admin startproject {project_name}
+
+#change directory in project and create requirements.txt
+cd {project_name}
+pip freeze > requirements.txt
+
+#create an app
+python3 manage.py startapp {app_name}
+
+#Linking the App with the project
+
+*IN PROJECT
+-Go to settings and under INSTALLED_APPS add {app_name}
+-Go to urls.py and import include from django.urls and construct
+a path ex: path('', include("{app_name}.urls"))
+
+*IN App
+-Create urls.py and set up urlpatterns
+- in urls.py import views
+- ex: path('', views.home, name='home')
+-establish a view and render a template
+
+*WORKING WITH API's
+-pip install requests
+-import requests in your views
+-when using requests for apis ensure to turn it into json
+

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Pokemon</title>
+    </head>
+    <body>
+        <header>
+            <h1> Choose a Pokemon</h1>
+        </header>
+        <main>
+            {% comment %} <button>fire</button>
+            <button>Water</button>
+            <button>Ground</button>
+            <button>Electric</button> {% endcomment %}
+            {% for type in types %}
+                <button> <a href="pokemon/{{type}}" >{{type}} </a> </button>
+            {% endfor %}
+        </main>
+    </body>
+</html>
+        
